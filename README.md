@@ -21,5 +21,5 @@ node index.js multiply --levels=5
 node index.js multiply --levels=5 --seriously
 
 # Reset
-rm -f children/*.js && node index.js setup
+rm -rf children/ && node index.js setup
 ```

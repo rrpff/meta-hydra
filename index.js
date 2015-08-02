@@ -22,6 +22,7 @@ if (flags.substr(0, 8) === 'multiply')
   multiply(1, 1);
 
 function setup () {
+  fs.mkdir('children');
   var read = fs.createReadStream('./template.js')
     , write = fs.createWriteStream('./children/1.js')
     ;
