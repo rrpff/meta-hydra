@@ -11,8 +11,7 @@ var MAX_LEVELS = (function () {
 })();
 
 if (MAX_LEVELS >= 5 && flags.indexOf('--seriously') === -1) {
-  console.error('You gotta be serious. Use --seriously if you\'re serious.')
-  process.exit(1);
+  throw new Error('You gotta be serious. Use --seriously if you\'re serious.')
 }
 
 if (flags.substr(0, 5) === 'setup')
@@ -25,7 +24,7 @@ function setup () {
   if (!fs.existsSync('children')) {
     fs.mkdirSync('children');
   }
-  
+
   var read = fs.createReadStream('./template.js')
     , write = fs.createWriteStream('./children/1.js')
     ;
@@ -34,7 +33,6 @@ function setup () {
 };
 
 function multiply (level, id) {
-  console.log('restarting with ' + id);
   if (level <= MAX_LEVELS) {
     var fname = (id || 1) + '.js'
       , fpath = Path.relative(__dirname, Path.join(__dirname, 'children', fname))
