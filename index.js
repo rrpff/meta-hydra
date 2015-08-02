@@ -23,7 +23,8 @@ if (flags.substr(0, 8) === 'multiply')
 
 function setup () {
   var read = fs.createReadStream('./template.js')
-    , write = fs.createWriteStream('./children/1.js');
+    , write = fs.createWriteStream('./children/1.js')
+    ;
 
   read.pipe(write);
 };
@@ -32,7 +33,8 @@ function multiply (level, id) {
   console.log('restarting with ' + id);
   if (level <= MAX_LEVELS) {
     var fname = (id || 1) + '.js'
-      , fpath = Path.relative(__dirname, Path.join(__dirname, 'children', fname));
+      , fpath = Path.relative(__dirname, Path.join(__dirname, 'children', fname))
+      ;
 
     var cp = spawn('node', [fpath]);
 
