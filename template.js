@@ -42,6 +42,6 @@ function commentRegexp (name) {
 };
 
 function replaceComment (contents, name, replacement) {
-  var replacement = '/' + '/ ' + name + ': [' + replacement + ']';
+  var replacement = '// ' + name + ': [' + replacement + ']';
   return contents.replace(commentRegexp(name), replacement);
 };
