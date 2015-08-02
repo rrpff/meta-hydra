@@ -17,7 +17,7 @@ node index.js multiply
 node index.js multiply --levels=5
 
 # Using levels greater than or equal to 5 requires --seriously
-# 5 levels equates to 62 files generated
+# 5 levels equates to 62 files generated, 10 is 2046
 node index.js multiply --levels=5 --seriously
 
 # Reset
