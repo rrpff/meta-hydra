@@ -14,11 +14,13 @@ if (MAX_LEVELS >= 5 && flags.indexOf('--seriously') === -1) {
   throw new Error('You gotta be serious. Use --seriously if you\'re serious.')
 }
 
-if (flags.substr(0, 5) === 'setup')
+if (flags.substr(0, 5) === 'setup') {
   setup();
+}
 
-if (flags.substr(0, 8) === 'multiply')
+if (flags.substr(0, 8) === 'multiply') {
   multiply(1, 1);
+}
 
 function setup () {
   if (!fs.existsSync('children')) {
