@@ -12,8 +12,11 @@ var fs = require('fs')
     var children = spawnChildren(contents);
 
     var thisContents = replaceComment(contents, 'Children', children.join(', '));
-    fs.createWriteStream(__filename).end(thisContents);
+    fs.createWriteStream(__filename).end(thisContents, function () {
+      console.log(children.join(', '));
+    });
   }
+
 })();
 
 function spawnChildren (contents) {
