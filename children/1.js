@@ -8,7 +8,7 @@ var fs = require('fs')
 (function spawn () {
   var contents = fs.readFileSync(__filename).toString();
 
-  if(contents.match(commentRegexp('Children'))[1].length === 0) {
+  if (contents.match(commentRegexp('Children'))[1].length === 0) {
     var children = spawnChildren(contents);
 
     var thisContents = replaceComment(contents, 'Children', children.join(', '));
